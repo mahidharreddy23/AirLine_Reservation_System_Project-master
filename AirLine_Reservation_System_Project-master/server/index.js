@@ -1,0 +1,66 @@
+const express = require("express");
+const app = express();
+const cors = require("cors");
+
+app.use(cors());
+app.use(express.json());
+
+const signInRoute = require("./Routes/SignIn/SignInDatabase");
+const signUpRote = require("./Routes/SignUp/SignUpDatabase");
+const getFlightListRoute = require("./Routes/Flight/FlightListDatabase");
+const getAircraftModelRoute = require("./Routes/Adding_database/AircraftModelDatabase");
+const getAirportRoute = require("./Routes/DropDown_List/AirportDatabase");
+const getPassengersGivenFlightRoute = require("./Routes/Summary/PassengersGivenFlight");
+const getNumberOfPassengersDateRoute = require("./Routes/Summary/NumberOfPassengersDate");
+const getNumberOfBookingPassengersRoute = require("./Routes/Summary/NumberofBookingPassengers");
+const getNumberOfBookingGoldRoute = require("./Routes/Summary/NumberOfBookingGold");
+const getNumberOfFrequentRoute = require("./Routes/Summary/NumberOfBookingFrequent");
+const getPastFlightRoute = require("./Routes/Summary/PastFlightDatabse");
+const getPassengerCount = require("./Routes/Summary/PassengerCountDatabase");
+const getTotalRevenue = require("./Routes/Summary/TotalRevenue");
+const getSearchFlight = require("./Routes/Search/SearchFlightDatabase");
+const getSignInAdmin = require("./Routes/SignIn/SignInAdminDatabase");
+const getUserDetails = require("./Routes/DropDown_List/FindUserDetails");
+const getPassengerID = require("./Routes/SignUp/PassengerID");
+const getFlightID = require("./Routes/DropDown_List/FlightIDDatabase");
+const getAirportCode = require("./Routes/DropDown_List/AirportID");
+const getFlightdetails = require("./Routes/Flight/FlightDetails");
+const getAddGuestUser = require("./Routes/Adding_database/AddGuestUser");
+const getADDFlightSchedule = require("./Routes/Adding_database/AddScheduleDatabase");
+const getFindPassengerType = require("./Routes/DropDown_List/PasssengerType");
+const getFingPassengerDetails = require("./Routes/Summary/FindDetailsOfPassengers");
+const getBookingSeat = require("./Routes/Adding_database/BookingSeatDatabase");
+const getLastGuestPassenger = require("./Routes/DropDown_List/LastGuestPassenger");
+const getFlightPrice = require("./Routes/DropDown_List/FlightPrice");
+
+app.use("/create", signInRoute);
+app.use("/account", signUpRote);
+app.use("/flights", getFlightListRoute);
+app.use("/aircraftModel", getAircraftModelRoute);
+app.use("/airport", getAirportRoute);
+app.use("/findpassengers", getPassengersGivenFlightRoute);
+app.use("/numberOfPassengers", getNumberOfPassengersDateRoute);
+app.use("/numberOfBookingGuestPassengers", getNumberOfBookingPassengersRoute);
+app.use("/numberOfBookingGoldPassengers", getNumberOfBookingGoldRoute);
+app.use("/numberOfBookingFrequentPassengers", getNumberOfFrequentRoute);
+app.use("/pastFlights", getPastFlightRoute);
+app.use("/passengerCount", getPassengerCount);
+app.use("/totalRevenue", getTotalRevenue);
+app.use("/searchflight", getSearchFlight);
+app.use("/adminSignIn", getSignInAdmin);
+app.use("/findDetails", getUserDetails);
+app.use("/getID", getPassengerID);
+app.use("/findFlightID", getFlightID);
+app.use("/airportID", getAirportCode);
+app.use("/flightDetails", getFlightdetails);
+app.use("/addGuestUser", getAddGuestUser);
+app.use("/addSchedule", getADDFlightSchedule);
+app.use("/passengerType", getFindPassengerType);
+app.use("/findPassengerDe", getFingPassengerDetails);
+app.use("/bookingSeat", getBookingSeat);
+app.use("/lastPassenger", getLastGuestPassenger);
+app.use("/flightPrice", getFlightPrice);
+
+app.listen(3001, () => {
+  console.log("Runnig the port 3001");
+});
