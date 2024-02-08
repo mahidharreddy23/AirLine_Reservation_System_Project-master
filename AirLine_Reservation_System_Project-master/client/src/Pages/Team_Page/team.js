@@ -1,7 +1,7 @@
 import './team.css'
 import Member1 from './1.jpg';
 import Member2 from './2.jpg';
-import Member3 from './3.png';
+import Member3 from './3.jpg';
 
 
 
