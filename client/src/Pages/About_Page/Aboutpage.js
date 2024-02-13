@@ -126,7 +126,7 @@ export default function Album() {
               <center>About Us</center>
             </Typography>
             <Typography  fontSize={30} marginTop={'10px'}  color="inherit" >
-            <center>MRD Airlines has been a leader in the aviation industry for over 50 years,
+            <center>MRD Airlines has been a GREAT leader in the aviation industry for over 50 years,
                     with a strong commitment to safety, customer service, and innovation. Our fleet 
                     of modern aircraft serves over 100 destinations across six continents, and we are
                     proud to have received numerous awards for our high levels of satisfaction among
